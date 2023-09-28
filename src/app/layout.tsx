@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
       <body className="bg-primary-950 font-body text-primary-300">
-        <div className="mx-auto flex min-h-screen max-w-screen-xl flex-col  gap-16 px-6 md:px-12 lg:flex-row lg:justify-between lg:gap-4 lg:px-24">
+        <div className="mx-auto flex min-h-screen max-w-screen-xl flex-col px-6 md:px-12 lg:flex-row lg:justify-between lg:gap-4 lg:px-24">
           <Header />
           {children}
         </div>
