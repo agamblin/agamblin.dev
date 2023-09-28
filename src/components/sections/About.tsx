@@ -16,7 +16,7 @@ function About() {
         optimizing site setups and internal tools at{' '}
         <StyledLink href="https://en.wavy.co/">Wavy</StyledLink>, and creating
         user-friendly interfaces at{' '}
-        <StyledLink href="https://www.masteos.com/">Mateos</StyledLink>.
+        <StyledLink href="https://www.masteos.com/">Masteos</StyledLink>.
       </p>
       <p>
         As a Software Engineer at Ionis, I&apos;m crafting solutions that
