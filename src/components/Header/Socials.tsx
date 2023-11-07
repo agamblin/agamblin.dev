@@ -21,7 +21,7 @@ const SOCIALS = [
 
 function Socials() {
   return (
-    <ul className="flex flex-shrink-0 justify-center gap-2">
+    <ul className="flex flex-shrink-0 justify-start gap-2">
       {SOCIALS.map(({ name, url, icon: Icon }) => (
         <li key={name} className="block leading-[0]">
           <StyledLink
