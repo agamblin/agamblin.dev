@@ -1,49 +1,28 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import * as CollapsibleBase from '@radix-ui/react-collapsible';
 
-type CollapsibleProps = {
-  treshold?: number;
-};
-
-const DEFAULT_VALUES: CollapsibleProps = {
-  treshold: 3,
-};
-
-function Collapsible({
+export function CollapsibleRoot({
   children,
-}: React.PropsWithChildren<CollapsibleProps> = DEFAULT_VALUES) {
-  const [isCollapsed, setIsCollapsed] = React.useState(true);
+  ...props
+}: React.PropsWithChildren<CollapsibleBase.CollapsibleProps>) {
+  return <CollapsibleBase.Root {...props}>{children}</CollapsibleBase.Root>;
+}
 
-  const arrayChildren = React.Children.toArray(children);
-
+export function CollapsibleTrigger({
+  children,
+  ...props
+}: React.PropsWithChildren<CollapsibleBase.CollapsibleTriggerProps>) {
   return (
-    <>
-      <motion.ol
-        layout={true}
-        transition={{
-          type: 'spring',
-          stiffness: 400,
-          damping: 40,
-          mass: 1,
-          restDelta: 0.01,
-        }}
-        className="group/list mt-2 flex flex-col gap-12 lg:mt-0"
-      >
-        {arrayChildren.slice(
-          0,
-          isCollapsed ? DEFAULT_VALUES.treshold : arrayChildren.length,
-        )}
-      </motion.ol>
-      <motion.button
-        onClick={() => setIsCollapsed(cValue => !cValue)}
-        layout="position"
-      >
-        View more
-      </motion.button>
-    </>
+    <CollapsibleBase.Trigger {...props}>{children}</CollapsibleBase.Trigger>
   );
 }
 
-export default Collapsible;
+export function CollapsibleContent({
+  children,
+  ...props
+}: React.PropsWithChildren<CollapsibleBase.CollapsibleContentProps>) {
+  return (
+    <CollapsibleBase.Content {...props}>{children}</CollapsibleBase.Content>
+  );
+}
