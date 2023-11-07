@@ -1,10 +1,12 @@
 import { getDirectoryFiles } from '@/utils';
-import JobItem, { JobItemProps } from './JobItem';
-import Section from '../Section';
 import Collapsible from '@/components/Collapsible';
+import Section from '@/components/sections/Section';
+import JobItem, { JobItemProps } from './JobItem';
 
 async function JobList() {
-  const jobList = await getDirectoryFiles<JobItemProps>('jobs');
+  const jobList = (await getDirectoryFiles<JobItemProps>('jobs')).sort((a, b) =>
+    b.startDate.localeCompare(a.startDate),
+  );
 
   return (
     <Section title="experience">
