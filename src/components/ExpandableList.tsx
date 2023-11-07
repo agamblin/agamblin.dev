@@ -6,7 +6,6 @@ import { ChevronDown } from 'react-feather';
 
 export type CollapsibleProps = {
   treshold?: number;
-  gap?: number;
   className?: string;
   name: string;
 };
@@ -14,7 +13,6 @@ export type CollapsibleProps = {
 function ExpandableList({
   children,
   treshold = 3,
-  gap = 12,
   name,
   className = '',
 }: React.PropsWithChildren<CollapsibleProps>) {
@@ -32,13 +30,13 @@ function ExpandableList({
 
   return (
     <Collapsible.Root onOpenChange={setIsOpen} open={isOpen}>
-      <ol className={`flex flex-col gap-${gap} ${className}`}>
+      <ol className={`flex flex-col gap-12 ${className}`}>
         {childrenArray.slice(0, treshold).map(child => child)}
         <Collapsible.Content forceMount asChild>
           {/* We use the negative margin to compensate for the empty space left by the content when it's collapsed */}
           <motion.ol
-            className={`flex flex-col gap-${gap} overflow-hidden will-change-[height] ${
-              !isOpen ? '-mt-' + gap : ''
+            className={`flex flex-col gap-12 overflow-hidden will-change-[height] ${
+              !isOpen ? '-mt-12' : ''
             }`}
             animate={{
               height: isOpen ? 'var(--collapsible-content-height)' : '0px',
@@ -51,7 +49,7 @@ function ExpandableList({
         </Collapsible.Content>
       </ol>
       <Collapsible.Trigger
-        className={`mt-${gap} flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100`}
+        className={`mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100`}
       >
         {(!isOpen ? 'Expand' : 'Collapse') + ` ${name}`}
         <ChevronDown
