@@ -26,7 +26,7 @@ function Socials() {
         <li key={name} className="block leading-[0]">
           <StyledLink
             href={url}
-            className="p-2 text-primary-100 hover:text-primary-200"
+            className="p-2 text-primary-300 hover:text-primary-100"
             aria-label={name}
             target="_blank"
             rel="noreferrer noopener"
