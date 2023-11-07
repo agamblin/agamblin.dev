@@ -18,7 +18,7 @@ function Socials() {
   return (
     <ul className="flex flex-shrink-0 justify-center gap-2">
       {SOCIALS.map(({ name, url, icon: Icon }) => (
-        <li key={name}>
+        <li key={name} className="block leading-[0]">
           <StyledLink
             href={url}
             className="p-2 text-primary-100 hover:text-primary-200"
