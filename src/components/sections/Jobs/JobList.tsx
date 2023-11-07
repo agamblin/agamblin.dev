@@ -9,8 +9,11 @@ async function JobList() {
   );
 
   return (
-    <Section title="experience">
-      <ExpandableList className="group/list mt-2 lg:mt-0">
+    <Section title="experience ">
+      <ExpandableList
+        className="group/list -mx-4 mt-2 lg:mt-0"
+        name="experiences"
+      >
         {jobList.map((job, i) => (
           <JobItem {...job} key={i} />
         ))}
