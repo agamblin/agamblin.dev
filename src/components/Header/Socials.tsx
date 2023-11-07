@@ -1,4 +1,4 @@
-import { GitHub, Linkedin } from 'react-feather';
+import { GitHub, Linkedin, FileText } from 'react-feather';
 import StyledLink from '../StyledLink';
 
 const SOCIALS = [
@@ -12,6 +12,11 @@ const SOCIALS = [
     url: 'https://www.linkedin.com/in/arthur-gamblin-656018120/',
     icon: Linkedin,
   },
+  {
+    name: 'Résumé',
+    url: '/resume_2023.pdf',
+    icon: FileText,
+  },
 ];
 
 function Socials() {
@@ -24,7 +29,7 @@ function Socials() {
             className="p-2 text-primary-100 hover:text-primary-200"
             aria-label={name}
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer noopener"
           >
             <Icon size={18} />
             <span className="sr-only">{name}</span>
