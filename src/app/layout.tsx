@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Poppins, Roboto } from 'next/font/google';
 
 import Header from '@/components/Header/Header';
+import RespectMotionPreferences from '@/components/RespectMotionPreferences';
 
 export const metadata: Metadata = {
   title: 'agamblin.dev',
@@ -29,13 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body className="bg-primary-950 font-body text-primary-300">
-        <div className="mx-auto flex min-h-screen max-w-screen-xl flex-col px-6 md:px-12 lg:flex-row lg:justify-between lg:gap-4 lg:px-24">
-          <Header />
-          {children}
-        </div>
-      </body>
-    </html>
+    <RespectMotionPreferences>
+      <html
+        lang="en"
+        className={`${headingFont.variable} ${bodyFont.variable}`}
+      >
+        <body className="bg-primary-950 font-body text-primary-300">
+          <div className="mx-auto flex min-h-screen max-w-screen-xl flex-col px-6 md:px-12 lg:flex-row lg:justify-between lg:gap-4 lg:px-24">
+            <Header />
+            {children}
+          </div>
+        </body>
+      </html>
+    </RespectMotionPreferences>
   );
 }

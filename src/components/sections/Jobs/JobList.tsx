@@ -1,17 +1,23 @@
 import { getDirectoryFiles } from '@/utils';
+import Section from '@/components/sections/Section';
+import ExpandableList from '@/components/ExpandableList';
 import JobItem, { JobItemProps } from './JobItem';
-import Section from '../Section';
 
 async function JobList() {
-  const jobList = await getDirectoryFiles<JobItemProps>('jobs');
+  const jobList = (await getDirectoryFiles<JobItemProps>('jobs')).sort((a, b) =>
+    b.startDate.localeCompare(a.startDate),
+  );
 
   return (
-    <Section title="experience">
-      <ol className="group/list mt-2 flex flex-col gap-12 lg:mt-0">
+    <Section title="experience ">
+      <ExpandableList
+        className="group/list -mx-4 mt-2 lg:mt-0"
+        name="experiences"
+      >
         {jobList.map((job, i) => (
           <JobItem {...job} key={i} />
         ))}
-      </ol>
+      </ExpandableList>
     </Section>
   );
 }
