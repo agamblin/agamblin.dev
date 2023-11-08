@@ -6,6 +6,30 @@
   .footer-link {
     @apply text-sm text-primary-300 hover:text-primary-100;
   }
+
+  .bg-spotlight {
+    --x: var(--dynamic-x); /* Dynamic x position */
+    --y: var(--dynamic-y); /* Dynamic y position */
+
+    background: radial-gradient(
+      600px at var(--x) var(--y),
+      rgba(29, 78, 216, 0.15),
+      rgba(31, 75, 205, 0.15),
+      rgba(36, 69, 178, 0.15),
+      rgba(39, 61, 143, 0.15),
+      rgba(39, 52, 109, 0.15),
+      rgba(37, 43, 81, 0.15),
+      rgba(33, 37, 62, 0.15),
+      transparent
+    );
+  }
+
+  @media (pointer: coarse) {
+    .bg-spotlight {
+      --x: 0;
+      --y: 0;
+    }
+  }
 }
 
 /*
