@@ -7,13 +7,11 @@ import { ChevronDown } from 'react-feather';
 export type CollapsibleProps = {
   treshold?: number;
   className?: string;
-  name: string;
 };
 
 function ExpandableList({
   children,
   treshold = 3,
-  name,
   className = '',
 }: React.PropsWithChildren<CollapsibleProps>) {
   const childrenArray = React.Children.toArray(children);
@@ -51,7 +49,7 @@ function ExpandableList({
       <Collapsible.Trigger
         className={`relative mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100 after:absolute after:-inset-[var(--tap-increment)] after:content-[''] lg:after:content-none`}
       >
-        {(!isOpen ? 'Expand' : 'Collapse') + ` ${name}`}
+        {!isOpen ? 'View more' : 'View less'}
         <ChevronDown
           size={16}
           className={`${
