@@ -19,11 +19,12 @@ function About() {
         <StyledLink href="https://www.masteos.com/">Masteos</StyledLink>.
       </p>
       <p>
-        As a Software Engineer at Ionis, I&apos;m crafting solutions that
-        streamline scheduling and management for thousands of users. Outside of
-        my primary role, I&apos;ve ventured into various tech stacks, from React
-        and Node.js to Golang and Python, ensuring that I stay at the forefront
-        of technological advancements.
+        As a Software Engineer at{' '}
+        <StyledLink href="https://www.ionis-group.com/">Ionis</StyledLink>,
+        I&apos;m crafting solutions that streamline scheduling and management
+        for thousands of users. Outside of my primary role, I&apos;ve ventured
+        into various tech stacks, from React and Node.js to Golang and Python,
+        ensuring that I stay at the forefront of technological advancements.
       </p>
       <p>
         When not immersed in code, I enjoy reading historical non-fiction,
