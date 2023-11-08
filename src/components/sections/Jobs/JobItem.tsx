@@ -40,7 +40,7 @@ function JobItem({
     <li>
       {/* Removed -m-4 from the className below for consistency with the other sections, check if fix is available to increase spacing*/}
       <a
-        className="group/item transition-[background-color, opacity]  grid items-baseline gap-2 rounded-md p-4 duration-500 hover:duration-[250ms] sm:grid-cols-10 sm:gap-4 lg:hover:bg-primary-900/40 lg:hover:!opacity-100 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:group-hover/list:opacity-50"
+        className="group/item transition-[background-color, opacity]  grid items-baseline gap-2 rounded-md duration-500 hover:duration-[250ms] sm:grid-cols-10 sm:gap-4 lg:p-4 lg:hover:bg-primary-900/40 lg:hover:!opacity-100 lg:hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:hover:drop-shadow-lg lg:group-hover/list:opacity-50"
         href={companyUri}
         aria-label={`Link to ${company} website`}
         target="_blank"
