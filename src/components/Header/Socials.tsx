@@ -20,8 +20,9 @@ const SOCIALS = [
 ];
 
 function Socials() {
+  // We apply -ml-2 for optical alignment, we need the padding to be applied for coarse pointer devices but it ruins the alignment
   return (
-    <ul className="flex flex-shrink-0 justify-start gap-2">
+    <ul className="-ml-2 flex flex-shrink-0 justify-start gap-2">
       {SOCIALS.map(({ name, url, icon: Icon }) => (
         <li key={name} className="block leading-[0]">
           <StyledLink
@@ -31,7 +32,7 @@ function Socials() {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Icon size={18} />
+            <Icon size={20} />
             <span className="sr-only">{name}</span>
           </StyledLink>
         </li>
