@@ -4,6 +4,7 @@ import { Poppins, Roboto } from 'next/font/google';
 
 import Header from '@/components/Header/Header';
 import RespectMotionPreferences from '@/components/RespectMotionPreferences';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'agamblin.dev',
@@ -36,9 +37,10 @@ export default function RootLayout({
         className={`${headingFont.variable} ${bodyFont.variable}`}
       >
         <body className="bg-primary-950 font-body text-primary-300">
-          <div className="mx-auto flex min-h-screen max-w-screen-xl flex-col px-6 md:px-12 lg:flex-row lg:justify-between lg:gap-4 lg:px-24">
+          <div className="mx-auto grid  min-h-screen max-w-screen-xl grid-rows-[min-content_1fr_min-content]  gap-y-24 px-6 py-12  md:px-12 md:py-20 lg:grid-cols-2  lg:grid-rows-[1fr_min-content] lg:px-24 lg:py-0 ">
             <Header />
             {children}
+            <Footer />
           </div>
         </body>
       </html>
