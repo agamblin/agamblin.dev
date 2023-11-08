@@ -49,7 +49,7 @@ function ExpandableList({
         </Collapsible.Content>
       </ol>
       <Collapsible.Trigger
-        className={`mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100`}
+        className={`relative mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100 after:absolute after:-inset-[var(--tap-increment)] after:content-[''] lg:after:content-none`}
       >
         {(!isOpen ? 'Expand' : 'Collapse') + ` ${name}`}
         <ChevronDown
