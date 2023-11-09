@@ -8,10 +8,8 @@ async function ProjectList() {
     await getDirectoryFiles<ProjectItemProps>('projects')
   ).sort((a, b) => b.date.localeCompare(a.date));
 
-  console.log(projectList);
-
   return (
-    <Section title="experience">
+    <Section title="projects">
       <ol className="group/list flex flex-col gap-12 lg:-m-4">
         {projectList.map((project, i) => (
           <ProjectItem {...project} key={i} />
