@@ -10,6 +10,7 @@ import Gradient from '@/components/Gradient';
 export const metadata: Metadata = {
   title: 'agamblin.dev',
   description: 'Fullstack Engineer',
+  manifest: '/manifest.webmanifest',
 };
 
 const headingFont = Poppins({
