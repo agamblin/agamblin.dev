@@ -35,7 +35,7 @@ export default function RootLayout({
     <RespectMotionPreferences>
       <html
         lang="en"
-        className={`${headingFont.variable} ${bodyFont.variable}`}
+        className={`${headingFont.variable} ${bodyFont.variable} sm:scroll-smooth`}
       >
         <body className="relative bg-primary-950 font-body text-primary-300">
           <Gradient />

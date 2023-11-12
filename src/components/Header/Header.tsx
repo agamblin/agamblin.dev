@@ -1,3 +1,4 @@
+import Navigation from '../Navigation';
 import Socials from './Socials';
 
 function Header() {
@@ -14,6 +15,7 @@ function Header() {
           I build accessible, inclusive products and digital experiences for the
           web.
         </p>
+        <Navigation />
       </div>
       <Socials />
     </header>
