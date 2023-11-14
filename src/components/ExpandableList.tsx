@@ -30,7 +30,7 @@ function ExpandableList({
 
   return (
     <Collapsible.Root onOpenChange={setIsOpen} open={isOpen}>
-      <ol className={`flex flex-col gap-12 ${className}`}>
+      <ul className={`flex flex-col gap-12 ${className}`}>
         {childrenArray.slice(0, treshold).map(child => child)}
         {isExpandable && (
           <Collapsible.Content forceMount asChild>
@@ -49,7 +49,7 @@ function ExpandableList({
             </motion.ol>
           </Collapsible.Content>
         )}
-      </ol>
+      </ul>
       {isExpandable && (
         <Collapsible.Trigger
           className={`relative mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100 after:absolute after:-inset-[var(--tap-increment)] after:content-[''] lg:after:content-none`}

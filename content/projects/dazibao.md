@@ -6,4 +6,4 @@ thumbnail: '/dazibao.png'
 link: 'https://github.com/agamblin/dazibao'
 ---
 
-Dazibao is a design project in collaboration with my brother Hugo Gamblin for his Master's final defense at École de Condé, Paris. This project is aimed to showcase various prints and their meaning about society in an interactive experience. I had the occasion to learn a lot about image optimization during this project.
+Dazibao is a design project in collaboration with my brother **Hugo Gamblin** for his Master's final defense at **École de Condé**. This project is aimed to showcase various prints and their meaning about society in an interactive experience. I had the occasion to learn a lot about image optimization during this project.
