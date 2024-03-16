@@ -9,7 +9,10 @@ async function JobList() {
   );
 
   return (
-    <Section title="experience" className="scroll-mt-36">
+    <Section
+      title="experience"
+      className="scroll-mt-16 md:scroll-mt-24 lg:scroll-mt-36"
+    >
       <ExpandableList className="group/list lg:-m-4">
         {jobList.map((job, i) => (
           <JobItem {...job} key={i} />

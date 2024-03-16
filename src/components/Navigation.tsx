@@ -14,24 +14,30 @@ function Navigation() {
   );
 
   React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id as Section);
-          }
-        });
-      },
-      { threshold: 1 },
-    );
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll('section');
+      const sectionTops = Array.from(sections).map(section => {
+        return {
+          id: section.id as Section,
+          top: section.getBoundingClientRect().top + scrollPosition,
+        };
+      });
 
-    // Observe each section
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
+      const currentSection = sectionTops.find(
+        section => section.top > scrollPosition,
+      );
+
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
+    }
+    window.addEventListener('scroll', handleScroll);
+    // Initial check on component mount
+    handleScroll();
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
