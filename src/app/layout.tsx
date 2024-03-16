@@ -38,9 +38,9 @@ export default function RootLayout({
         lang="en"
         className={`${headingFont.variable} ${bodyFont.variable} sm:scroll-smooth`}
       >
-        <body className="relative bg-primary-950 font-body text-primary-300">
+        <body className="relative min-h-screen bg-primary-950 font-body text-primary-300">
           <Gradient />
-          <div className="mx-auto grid  min-h-screen max-w-screen-xl grid-rows-[min-content_1fr_min-content]  gap-y-24 px-6 py-12  md:px-12 md:py-20 lg:grid-cols-2  lg:grid-rows-[1fr_min-content] lg:px-24 lg:py-0 ">
+          <div className="absolute mx-auto grid  min-h-screen max-w-screen-xl grid-rows-[min-content_1fr_min-content]  gap-y-24 px-6 py-12  md:px-12 md:py-20 lg:grid-cols-2  lg:grid-rows-[1fr_min-content] lg:px-24 lg:py-0 ">
             <Header />
             {children}
             <Footer />

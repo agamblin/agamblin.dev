@@ -8,7 +8,7 @@ function Gradient() {
 
   return (
     <div
-      className="bg-spotlight pointer-events-none fixed inset-0 z-30 lg:absolute"
+      className="bg-spotlight pointer-events-none fixed inset-0 lg:absolute"
       style={
         {
           '--dynamic-x': `${x}px`,
