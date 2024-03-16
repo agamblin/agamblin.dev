@@ -1,4 +1,4 @@
-import { getDirectoryFiles } from '@/utils';
+import { getDirectoryFiles } from '@/data';
 import Section from '@/components/sections/Section';
 import ExpandableList from '@/components/ExpandableList';
 import JobItem, { JobItemProps } from './JobItem';

@@ -3,6 +3,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { ChevronDown } from 'react-feather';
+import { cn } from '@/utils';
 
 export type CollapsibleProps = {
   treshold?: number;
@@ -30,15 +31,18 @@ function ExpandableList({
 
   return (
     <Collapsible.Root onOpenChange={setIsOpen} open={isOpen}>
-      <ul className={`flex flex-col gap-12 ${className}`}>
+      <ul className={cn('flex flex-col gap-12', className)}>
         {childrenArray.slice(0, treshold).map(child => child)}
         {isExpandable && (
           <Collapsible.Content forceMount asChild>
             {/* We use the negative margin to compensate for the empty space left by the content when it's collapsed */}
             <motion.ol
-              className={`flex flex-col gap-12 overflow-hidden will-change-[height] ${
-                !isOpen ? '-mt-12' : ''
-              }`}
+              className={cn(
+                'flex flex-col gap-12 overflow-hidden will-change-[height]',
+                {
+                  '-mt-12': !isOpen,
+                },
+              )}
               animate={{
                 height: isOpen ? 'var(--collapsible-content-height)' : '0px',
               }}
@@ -57,9 +61,9 @@ function ExpandableList({
           {!isOpen ? 'View more' : 'View less'}
           <ChevronDown
             size={16}
-            className={`${
-              isOpen ? 'rotate-180' : 'rotate-0'
-            } transition-transform`}
+            className={cn('transition-transform', {
+              'rotate-180': isOpen,
+            })}
           />
         </Collapsible.Trigger>
       )}

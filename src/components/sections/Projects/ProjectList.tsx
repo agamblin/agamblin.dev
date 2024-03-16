@@ -1,5 +1,5 @@
 import React from 'react';
-import { getDirectoryFiles } from '@/utils';
+import { getDirectoryFiles } from '@/data';
 import Section from '../Section';
 import ProjectItem, { ProjectItemProps } from './ProjectItem';
 

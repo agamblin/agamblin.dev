@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { DEFAULT_TRANSITION } from '@/constants';
+import { cn } from '@/utils';
 
 const SECTIONS = ['about', 'experience', 'projects'] as const;
 
@@ -47,14 +48,17 @@ function Navigation() {
         <a
           key={section}
           href={`#${section}`}
-          className={`${
-            section === activeSection ? 'text-primary-200' : 'text-primary-400'
-          } relative py-2  pl-4 text-xs font-bold uppercase tracking-widest transition-colors hover:text-primary-200`}
+          className={cn(
+            'relative py-2  pl-4 text-xs font-bold uppercase tracking-widest text-primary-400 transition-colors hover:text-primary-200',
+            {
+              'text-primary-200': section === activeSection,
+            },
+          )}
         >
           {section}
           {section === activeSection && (
             <motion.div
-              className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200 "
+              className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200"
               layoutId="active"
               transition={DEFAULT_TRANSITION}
             />

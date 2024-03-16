@@ -1,3 +1,4 @@
+import { cn } from '@/utils';
 import type { HTMLAttributes } from 'react';
 
 export type SectionProps = {
@@ -12,7 +13,10 @@ function Section({
 }: React.PropsWithChildren<SectionProps>) {
   return (
     <section
-      className={`tracking-relaxed flex flex-col gap-4 leading-relaxed ${className}`}
+      className={cn(
+        'tracking-relaxed flex flex-col gap-4 leading-relaxed',
+        className,
+      )}
       id={title.toLowerCase()}
     >
       <h2 className="sticky top-0 z-10 bg-primary-950/70 py-2 font-semibold uppercase tracking-wider text-primary-100 backdrop-blur lg:sr-only">
