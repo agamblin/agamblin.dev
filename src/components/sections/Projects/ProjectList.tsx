@@ -9,7 +9,7 @@ async function ProjectList() {
   ).sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <Section title="projects">
+    <Section title="projects" className="scroll-mt-24">
       <ul className="group/list flex flex-col gap-12 lg:-m-4">
         {projectList.map((project, i) => (
           <ProjectItem {...project} key={i} />
