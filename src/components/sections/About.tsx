@@ -4,10 +4,7 @@ import StyledLink from '../StyledLink';
 
 function About() {
   return (
-    <Section
-      title="about"
-      className="scroll-mt-16 md:scroll-mt-24 lg:scroll-mt-36"
-    >
+    <Section title="about" className="scroll-mt-24">
       <p>
         From game modding during my early years to completing my master at{' '}
         <StyledLink href="https://www.epitech.eu/en/">Epitech Paris</StyledLink>
