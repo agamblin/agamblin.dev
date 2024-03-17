@@ -44,7 +44,7 @@ function Navigation() {
 
   return (
     <nav className="mt-20  hidden flex-col border-l-[1px] border-l-primary-500 lg:flex">
-      {SECTIONS.map(section => (
+      {SECTIONS.map((section, idx) => (
         <a
           key={section}
           href={`#${section}`}
@@ -60,7 +60,11 @@ function Navigation() {
             <motion.div
               className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200 shadow-[0_0_9px_3px_hsl(219,46%,48%)]"
               layoutId="active"
-              transition={DEFAULT_TRANSITION}
+              transition={
+                idx === 0 || idx === SECTIONS.length - 1
+                  ? DEFAULT_TRANSITION
+                  : { ...DEFAULT_TRANSITION, damping: 40 }
+              }
             />
           )}
         </a>
