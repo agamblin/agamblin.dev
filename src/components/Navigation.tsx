@@ -58,7 +58,7 @@ function Navigation() {
           {section}
           {section === activeSection && (
             <motion.div
-              className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200 shadow-[0_0_15px_5px_hsl(219,46%,48%)]"
+              className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200 shadow-[0_0_9px_3px_hsl(219,46%,48%)]"
               layoutId="active"
               transition={DEFAULT_TRANSITION}
             />
