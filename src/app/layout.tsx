@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Poppins, Roboto } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Header from '@/components/Header/Header';
 import RespectMotionPreferences from '@/components/RespectMotionPreferences';
@@ -45,6 +46,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </div>
+          <SpeedInsights />
         </body>
       </html>
     </RespectMotionPreferences>
