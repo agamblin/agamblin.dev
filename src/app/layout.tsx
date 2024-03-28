@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header/Header';
 import RespectMotionPreferences from '@/components/RespectMotionPreferences';
 import Footer from '@/components/Footer';
-import Gradient from '@/components/Gradient';
+import Spotlight from '@/components/Spotlight';
 
 export const metadata: Metadata = {
   title: 'agamblin.dev',
@@ -39,15 +39,14 @@ export default function RootLayout({
         lang="en"
         className={`${headingFont.variable} ${bodyFont.variable} sm:scroll-smooth`}
       >
-        <body className="relative min-h-screen bg-primary-950 font-body text-primary-300">
-          <Gradient />
+        <Spotlight>
           <div className="relative mx-auto grid  min-h-screen max-w-screen-xl grid-rows-[min-content_1fr_min-content]  gap-y-24 px-6 py-12  md:px-12 md:py-20 lg:grid-cols-2  lg:grid-rows-[1fr_min-content] lg:px-24 lg:py-0 ">
             <Header />
             {children}
             <Footer />
           </div>
           <SpeedInsights />
-        </body>
+        </Spotlight>
       </html>
     </RespectMotionPreferences>
   );
