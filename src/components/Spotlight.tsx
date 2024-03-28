@@ -5,9 +5,7 @@ import {
   SpringOptions,
   motion,
   useMotionTemplate,
-  useMotionValue,
   useSpring,
-  MotionValue,
 } from 'framer-motion';
 
 const SPRING_CONFIG = {
@@ -15,12 +13,9 @@ const SPRING_CONFIG = {
   stiffness: 100,
 } satisfies SpringOptions;
 
-function useSpotlightBackground(
-  mouseX: MotionValue<number>,
-  mouseY: MotionValue<number>,
-) {
-  const xSpring = useSpring(mouseX, SPRING_CONFIG);
-  const ySpring = useSpring(mouseY, SPRING_CONFIG);
+function SpotlightOverlay({ children }: React.PropsWithChildren) {
+  const xSpring = useSpring(0, SPRING_CONFIG);
+  const ySpring = useSpring(0, SPRING_CONFIG);
 
   const background = useMotionTemplate`
     radial-gradient(
@@ -31,19 +26,11 @@ function useSpotlightBackground(
     )
   `;
 
-  return background;
-}
-
-function SpotlightOverlay({ children }: React.PropsWithChildren) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const spotlightBackground = useSpotlightBackground(mouseX, mouseY);
-
   function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     let { left, top } = currentTarget.getBoundingClientRect();
 
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    xSpring.set(clientX - left);
+    ySpring.set(clientY - top);
   }
 
   return (
@@ -54,7 +41,7 @@ function SpotlightOverlay({ children }: React.PropsWithChildren) {
       <motion.div
         className="pointer-events-none fixed inset-0 lg:absolute"
         style={{
-          background: spotlightBackground,
+          background,
         }}
       />
       {children}
