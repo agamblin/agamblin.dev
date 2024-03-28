@@ -19,7 +19,7 @@ function SpotlightOverlay({ children }: React.PropsWithChildren) {
 
   const background = useMotionTemplate`
     radial-gradient(
-      650px at ${xSpring}px ${ySpring}px,
+      600px at ${xSpring}px ${ySpring}px,
       rgba(29, 78, 216, 0.15), rgba(31, 75, 205, 0.15), rgba(36, 69, 178, 0.15),
       rgba(39, 61, 143, 0.15), rgba(39, 52, 109, 0.15), rgba(37, 43, 81, 0.15),
       rgba(33, 37, 62, 0.15), transparent
