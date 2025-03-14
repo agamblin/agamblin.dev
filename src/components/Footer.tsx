@@ -2,30 +2,34 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="h-full text-sm text-primary-400 lg:pb-24">
-      &#169; 2023; Designed and developed by Arthur Gamblin. Built with{' '}
+    <footer className={`
+      h-full text-sm text-primary-400
+      lg:pb-24
+    `}>
+      &#169; {new Date().getFullYear()}; Designed and developed by Arthur
+      Gamblin. Built with&nbsp;
       <a className="footer-link" href="https://nextjs.org/">
         Next.js
-      </a>{' '}
-      and{' '}
+      </a>
+      &nbsp;and&nbsp;
       <a className="footer-link" href="https://tailwindcss.com/">
         Tailwind
       </a>
-      . Text set using the{' '}
+      . Text set using the&nbsp;
       <a
         className="footer-link"
         href="https://fonts.google.com/specimen/Roboto"
       >
         Roboto
-      </a>{' '}
-      and{' '}
+      </a>
+      &nbsp;and&nbsp;
       <a
         className="footer-link"
         href="https://fonts.google.com/specimen/Poppins?query=poppins"
       >
         Poppins
-      </a>{' '}
-      fonts.
+      </a>
+      &nbsp;fonts.
     </footer>
   );
 }

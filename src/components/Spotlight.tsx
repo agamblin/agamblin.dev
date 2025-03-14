@@ -35,11 +35,14 @@ function SpotlightOverlay({ children }: React.PropsWithChildren) {
 
   return (
     <body
-      className="relative min-h-screen bg-primary-950 font-body text-primary-300"
+      className={`relative min-h-screen bg-primary-950 font-body text-primary-300`}
       onMouseMove={handleMouseMove}
     >
       <motion.div
-        className="pointer-events-none fixed inset-0 lg:absolute"
+        className={`
+          pointer-events-none fixed inset-0
+          lg:absolute
+        `}
         style={{
           background,
         }}

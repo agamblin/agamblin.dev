@@ -1,0 +1,7 @@
+{
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["eslint-plugin-readable-tailwind"],
+  "rules": {
+    "readable-tailwind/multiline": ["warn", { "printWidth": 100 }]
+  }
+}

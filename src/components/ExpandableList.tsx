@@ -56,7 +56,12 @@ function ExpandableList({
       </ul>
       {isExpandable && (
         <Collapsible.Trigger
-          className={`relative mt-12 flex items-center gap-2 font-medium capitalize tracking-tight text-primary-100 after:absolute after:-inset-[var(--tap-increment)] after:content-[''] lg:after:content-none`}
+          className={`
+            relative mt-12 flex items-center gap-2 font-medium capitalize tracking-tight
+            text-primary-100
+            after:absolute after:-inset-[var(--tap-increment)] after:content-['']
+            lg:after:content-none
+          `}
         >
           {!isOpen ? 'View more' : 'View less'}
           <ChevronDown
