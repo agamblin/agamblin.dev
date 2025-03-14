@@ -2,7 +2,10 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="h-full text-sm text-primary-400 lg:pb-24">
+    <footer className={`
+      h-full text-sm text-primary-400
+      lg:pb-24
+    `}>
       &#169; {new Date().getFullYear()}; Designed and developed by Arthur
       Gamblin. Built with&nbsp;
       <a className="footer-link" href="https://nextjs.org/">

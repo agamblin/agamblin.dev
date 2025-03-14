@@ -10,7 +10,10 @@ async function ProjectList() {
 
   return (
     <Section title="projects" className="scroll-mt-24">
-      <ul className="group/list flex flex-col gap-12 lg:-m-4">
+      <ul className={`
+        group/list flex flex-col gap-12
+        lg:-m-4
+      `}>
         {projectList.map((project, i) => (
           <ProjectItem {...project} key={i} />
         ))}

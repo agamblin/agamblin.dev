@@ -43,13 +43,20 @@ function Navigation() {
   }, []);
 
   return (
-    <nav className="mt-20  hidden flex-col border-l-[1px] border-l-primary-500 lg:flex">
+    <nav className={`
+      mt-20 hidden flex-col border-l-[1px] border-l-primary-500
+      lg:flex
+    `}>
       {SECTIONS.map((section, idx) => (
         <a
           key={section}
           href={`#${section}`}
           className={cn(
-            'relative py-2  pl-4 text-xs font-bold uppercase tracking-widest text-primary-400 transition-colors hover:text-primary-200',
+            `
+              relative py-2 pl-4 text-xs font-bold uppercase tracking-widest text-primary-400
+              transition-colors
+              hover:text-primary-200
+            `,
             {
               'text-primary-200': section === activeSection,
             },
@@ -58,7 +65,10 @@ function Navigation() {
           {section}
           {section === activeSection && (
             <motion.div
-              className="absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200 shadow-[0_0_9px_3px_hsl(219,46%,48%)]"
+              className={`
+                absolute left-[-1px] top-0 z-20 h-full w-[1px] bg-primary-200
+                shadow-[0_0_9px_3px_hsl(219,46%,48%)]
+              `}
               layoutId="active"
               transition={
                 idx === 0 || idx === SECTIONS.length - 1

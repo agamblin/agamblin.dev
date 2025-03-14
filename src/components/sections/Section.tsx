@@ -19,7 +19,10 @@ function Section({
       )}
       id={title.toLowerCase()}
     >
-      <h2 className="sticky top-0 z-10 py-2 font-semibold uppercase tracking-wider text-primary-100 backdrop-blur lg:sr-only">
+      <h2 className={`
+        sticky top-0 z-10 py-2 font-semibold uppercase tracking-wider text-primary-100 backdrop-blur
+        lg:sr-only
+      `}>
         {title}
       </h2>
       {children}
