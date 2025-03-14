@@ -1,6 +1,6 @@
 import { GitHub, Linkedin, FileText } from 'react-feather';
 import StyledLink from '../StyledLink';
-import DropdownMenu from '../DropdownMenu';
+import ResumeDropdownMenu from '../ResumeMenu';
 
 const SOCIALS = [
   {
@@ -37,7 +37,7 @@ function Socials() {
         </li>
       ))}
       <li className="block leading-[0]">
-        <DropdownMenu />
+        <ResumeDropdownMenu />
         <span className="sr-only">Resume</span>
       </li>
     </ul>
