@@ -1,5 +1,6 @@
 import { GitHub, Linkedin, FileText } from 'react-feather';
 import StyledLink from '../StyledLink';
+import DropdownMenu from '../DropdownMenu';
 
 const SOCIALS = [
   {
@@ -12,11 +13,6 @@ const SOCIALS = [
     url: 'https://www.linkedin.com/in/arthur-gamblin-656018120/',
     icon: Linkedin,
   },
-  {
-    name: 'Résumé',
-    url: '/resume_2023.pdf',
-    icon: FileText,
-  },
 ];
 
 function Socials() {
@@ -27,7 +23,10 @@ function Socials() {
         <li key={name} className="block leading-[0]">
           <StyledLink
             href={url}
-            className="p-2 text-primary-300 hover:text-primary-100"
+            className={`
+              p-2 text-primary-300
+              hover:text-primary-100
+            `}
             aria-label={name}
             target="_blank"
             rel="noreferrer noopener"
@@ -37,6 +36,10 @@ function Socials() {
           </StyledLink>
         </li>
       ))}
+      <li className="block leading-[0]">
+        <DropdownMenu />
+        <span className="sr-only">Resume</span>
+      </li>
     </ul>
   );
 }
